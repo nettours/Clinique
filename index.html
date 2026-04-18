@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>عيادة الابتسامة الذهبية | Cabinet Dentaire El Ibtisamah</title>
+  <meta name="description" content="عيادة متخصصة في طب الأسنان — Cabinet dentaire spécialisé. Réservez votre rendez-vous en ligne."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Tajawal:wght@300;400;500;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:#0B2545; --navy2:#134074; --gold:#C9A84C; --gold2:#E8C96A;
+      --cream:#F9F5EE; --white:#fff; --gray:#6B7280; --light:#F3F4F6;
+      --text:#1a1a2e; --r:16px; --sh:0 20px 60px rgba(11,37,69,.12);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Tajawal',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;transition:font-family .3s}
+    body.fr{font-family:'DM Sans',sans-serif}
+
+    /* ── LANG SWITCHER ── */
+    .lang-bar{
+      background:var(--navy2);padding:8px 24px;
+      display:flex;justify-content:flex-end;align-items:center;gap:8px;
+    }
+    .lang-btn{
+      background:none;border:1.5px solid rgba(255,255,255,.3);
+      color:rgba(255,255,255,.7);font-size:12px;font-weight:700;
+      padding:4px 14px;border-radius:20px;cursor:pointer;
+      transition:all .2s;font-family:inherit;letter-spacing:.5px;
+    }
+    .lang-btn.active{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+    .lang-btn:hover:not(.active){border-color:var(--gold);color:var(--gold);}
+    .lang-sep{color:rgba(255,255,255,.3);font-size:12px;}
+
+    /* ── NAV ── */
+    nav{position:fixed;top:36px;width:100%;z-index:1000;
+      background:rgba(11,37,69,.96);backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(201,168,76,.2);transition:top .3s,box-shadow .3s}
+    .nav-inner{max-width:1200px;margin:0 auto;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 24px;height:68px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold2));
+      border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}
+    .logo-text{color:var(--white)}
+    .logo-title{font-size:15px;font-weight:700;line-height:1.2}
+    .logo-sub{font-size:10px;color:var(--gold2);letter-spacing:1px}
+    .nav-links{display:flex;gap:28px;list-style:none}
+    .nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;font-weight:500;
+      transition:color .2s;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;right:0;width:0;height:2px;
+      background:var(--gold);transition:width .3s}
+    body.fr .nav-links a::after{right:auto;left:0}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-links a:hover::after{width:100%}
+    .nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy)!important;
+      font-weight:700!important;padding:9px 20px;border-radius:50px;text-decoration:none;
+      font-size:13px;box-shadow:0 4px 15px rgba(201,168,76,.4);transition:all .2s}
+    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,168,76,.5)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all .3s}
+
+    /* ── HERO ── */
+    .hero{min-height:100vh;
+      background:linear-gradient(135deg,#0B2545 0%,#134074 50%,#0B2545 100%);
+      position:relative;overflow:hidden;display:flex;align-items:center;padding-top:104px}
+    .hero::before{content:'';position:absolute;inset:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E")}
+    .glow{position:absolute;pointer-events:none;border-radius:50%}
+    .glow1{top:-200px;left:-200px;width:600px;height:600px;
+      background:radial-gradient(circle,rgba(201,168,76,.12) 0%,transparent 70%)}
+    .glow2{bottom:-200px;right:-100px;width:500px;height:500px;
+      background:radial-gradient(circle,rgba(19,64,116,.5) 0%,transparent 70%)}
+    .hero-inner{max-width:1200px;margin:0 auto;padding:60px 24px;
+      display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;
+      background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);
+      border-radius:50px;padding:6px 16px;margin-bottom:22px}
+    .hero-badge span{font-size:12px;color:var(--gold2);font-weight:500}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,60px);
+      color:var(--white);line-height:1.15;margin-bottom:18px}
+    .hero h1 em{font-style:italic;color:var(--gold)}
+    .hero-desc{font-size:16px;color:rgba(255,255,255,.75);line-height:1.85;
+      margin-bottom:34px;font-weight:300}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+    .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);
+      font-weight:700;padding:14px 30px;border-radius:50px;text-decoration:none;font-size:15px;
+      box-shadow:0 8px 30px rgba(201,168,76,.4);transition:all .3s;display:inline-flex;align-items:center;gap:8px}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(201,168,76,.5)}
+    .btn-secondary{color:var(--white);font-weight:600;padding:14px 30px;border-radius:50px;
+      text-decoration:none;font-size:15px;border:1px solid rgba(255,255,255,.3);
+      transition:all .3s;display:inline-flex;align-items:center;gap:8px}
+    .btn-secondary:hover{background:rgba(255,255,255,.1)}
+    .hero-stats{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap}
+    .stat-num{font-size:26px;font-weight:800;color:var(--gold)}
+    .stat-label{font-size:13px;color:rgba(255,255,255,.6);margin-top:2px}
+
+    /* Hero card */
+    .hero-card{background:rgba(255,255,255,.07);backdrop-filter:blur(20px);
+      border:1px solid rgba(255,255,255,.15);border-radius:26px;padding:32px;
+      animation:float 6s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .card-header{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+    .card-avatar{width:50px;height:50px;border-radius:50%;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      display:flex;align-items:center;justify-content:center;font-size:22px}
+    .card-name{color:var(--white);font-weight:700;font-size:15px}
+    .card-sub{color:var(--gold2);font-size:12px;margin-top:2px}
+    .card-services{display:flex;flex-direction:column;gap:10px}
+    .cs{background:rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;
+      display:flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.08)}
+    .cs-icon{font-size:18px}
+    .cs-name{color:var(--white);font-size:13px;font-weight:600;flex:1}
+    .cs-badge{background:rgba(201,168,76,.2);color:var(--gold2);font-size:11px;padding:3px 10px;border-radius:20px}
+
+    /* ── TRUST ── */
+    .trust-bar{background:var(--cream);padding:24px;border-top:1px solid rgba(11,37,69,.08)}
+    .trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:18px}
+    .trust-item{display:flex;align-items:center;gap:8px}
+    .trust-icon{font-size:22px}
+    .trust-text{font-size:13px;color:var(--navy2);font-weight:600}
+
+    /* ── SECTIONS ── */
+    section{padding:80px 24px}
+    .section-inner{max-width:1200px;margin:0 auto}
+    .section-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;
+      text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,42px);
+      color:var(--navy);line-height:1.2;margin-bottom:14px}
+    .section-sub{font-size:15px;color:var(--gray);line-height:1.85;max-width:540px}
+    .centered{text-align:center}
+    .centered .section-sub{margin:0 auto}
+
+    /* ── SERVICES ── */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;margin-top:50px}
+    .svc-card{background:var(--white);border:1px solid rgba(11,37,69,.08);border-radius:var(--r);
+      padding:32px 26px;transition:all .35s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
+    .svc-card::before{content:'';position:absolute;top:0;right:0;left:0;height:3px;
+      background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);
+      transform-origin:right;transition:transform .4s}
+    body.fr .svc-card::before{transform-origin:left}
+    .svc-card:hover{transform:translateY(-6px);box-shadow:var(--sh);border-color:rgba(201,168,76,.3)}
+    .svc-card:hover::before{transform:scaleX(1)}
+    .svc-emoji{font-size:40px;margin-bottom:16px;display:block}
+    .svc-title{font-size:19px;font-weight:700;color:var(--navy);margin-bottom:9px}
+    .svc-desc{font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:16px}
+    .svc-price{font-size:20px;font-weight:800;color:var(--gold)}
+    .svc-price span{font-size:12px;color:var(--gray);font-weight:400}
+
+    /* ── BOOKING ── */
+    .booking{background:var(--navy);position:relative;overflow:hidden}
+    .booking::before{content:'';position:absolute;top:-200px;right:-200px;width:500px;height:500px;
+      background:radial-gradient(circle,rgba(201,168,76,.1) 0%,transparent 70%)}
+    .booking-grid{max-width:1200px;margin:0 auto;
+      display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start;position:relative;z-index:1}
+    .booking-info .section-title{color:var(--white)}
+    .booking-info .section-sub{color:rgba(255,255,255,.65)}
+    .bf-list{margin-top:36px;display:flex;flex-direction:column;gap:18px}
+    .bf{display:flex;gap:14px;align-items:flex-start}
+    .bf-icon{width:42px;height:42px;min-width:42px;background:rgba(201,168,76,.15);
+      border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px}
+    .bf-title{color:var(--white);font-weight:700;font-size:14px;margin-bottom:3px}
+    .bf-desc{color:rgba(255,255,255,.55);font-size:12px;line-height:1.6}
+
+    /* ── FORM ── */
+    .form-wrap{background:var(--white);border-radius:22px;padding:36px;
+      box-shadow:0 30px 80px rgba(0,0,0,.3)}
+    .form-title{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:4px}
+    .form-sub{font-size:13px;color:var(--gray);margin-bottom:24px}
+    .form-group{margin-bottom:16px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px;letter-spacing:.3px}
+    label .req{color:var(--gold)}
+    input,select,textarea{width:100%;padding:11px 14px;border:1.5px solid rgba(11,37,69,.15);
+      border-radius:10px;font-family:inherit;font-size:14px;color:var(--text);
+      background:var(--white);transition:border-color .2s,box-shadow .2s;direction:inherit}
+    body.fr input,body.fr select,body.fr textarea{direction:ltr;text-align:left}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);
+      box-shadow:0 0 0 3px rgba(201,168,76,.15)}
+    textarea{resize:vertical;min-height:80px}
+    select{appearance:none;cursor:pointer}
+
+    /* Time slots */
+    .time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+    .tslot{padding:8px 4px;border-radius:8px;border:1.5px solid rgba(11,37,69,.15);
+      text-align:center;font-size:12px;font-weight:600;cursor:pointer;
+      color:var(--navy);transition:all .2s;background:var(--white);font-family:inherit}
+    .tslot:hover:not(.unavail){border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.06)}
+    .tslot.sel{background:var(--navy);color:var(--white);border-color:var(--navy)}
+    .tslot.unavail{opacity:.38;cursor:not-allowed;text-decoration:line-through;font-size:11px}
+    .pause-label{grid-column:1/-1;text-align:center;font-size:11px;color:var(--gray);
+      padding:5px 0;font-style:italic}
+
+    .btn-book{width:100%;padding:15px;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:var(--navy);font-weight:800;font-size:15px;border:none;border-radius:12px;
+      cursor:pointer;font-family:inherit;transition:all .3s;
+      box-shadow:0 6px 20px rgba(201,168,76,.4);margin-top:6px}
+    .btn-book:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,168,76,.5)}
+
+    /* Success */
+    .success-box{display:none;text-align:center;padding:20px 0}
+    .success-icon{font-size:56px;margin-bottom:14px}
+    .success-box h3{font-size:21px;color:var(--navy);font-weight:800;margin-bottom:8px}
+    .success-box p{font-size:13px;color:var(--gray);line-height:1.7}
+    .success-details{background:var(--cream);border-radius:12px;padding:14px;margin:14px 0;text-align:right}
+    body.fr .success-details{text-align:left}
+    .drow{display:flex;justify-content:space-between;align-items:center;
+      padding:5px 0;border-bottom:1px solid rgba(11,37,69,.07);font-size:13px}
+    .drow:last-child{border:none}
+    .dlabel{color:var(--gray)}
+    .dval{font-weight:700;color:var(--navy)}
+
+    /* ── TESTIMONIALS ── */
+    .testimonials{background:var(--cream)}
+    .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:46px}
+    .rev-card{background:var(--white);border-radius:20px;padding:26px;
+      box-shadow:0 4px 20px rgba(11,37,69,.06);transition:transform .3s,box-shadow .3s}
+    .rev-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(11,37,69,.1)}
+    .stars{color:var(--gold);font-size:17px;margin-bottom:12px;letter-spacing:2px}
+    .rev-text{font-size:14px;color:var(--text);line-height:1.8;margin-bottom:18px;font-style:italic}
+    .reviewer{display:flex;align-items:center;gap:10px}
+    .rev-avatar{width:42px;height:42px;border-radius:50%;
+      background:linear-gradient(135deg,var(--navy),var(--navy2));
+      display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700}
+    .rev-name{font-weight:700;color:var(--navy);font-size:14px}
+    .rev-date{font-size:11px;color:var(--gray)}
+
+    /* ── DOCTOR ── */
+    .doctor{background:var(--navy)}
+    .doctor-grid{max-width:1200px;margin:0 auto;
+      display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .doc-card{background:rgba(255,255,255,.07);border-radius:22px;padding:36px;
+      border:1px solid rgba(255,255,255,.1);text-align:center}
+    .doc-av{width:110px;height:110px;border-radius:50%;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      display:flex;align-items:center;justify-content:center;font-size:48px;
+      margin:0 auto 18px;box-shadow:0 0 0 6px rgba(201,168,76,.2)}
+    .doc-name{font-size:22px;font-weight:800;color:var(--white);margin-bottom:5px}
+    .doc-spec{color:var(--gold2);font-size:13px;margin-bottom:18px}
+    .doc-badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+    .doc-badge{background:rgba(201,168,76,.15);color:var(--gold2);font-size:11px;
+      padding:4px 12px;border-radius:20px;border:1px solid rgba(201,168,76,.3)}
+    .doc-info .section-title{color:var(--white)}
+    .doc-info .section-sub{color:rgba(255,255,255,.65)}
+    .doc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+    .ds{background:rgba(255,255,255,.07);border-radius:14px;padding:16px;text-align:center;
+      border:1px solid rgba(255,255,255,.08)}
+    .ds-num{font-size:24px;font-weight:800;color:var(--gold)}
+    .ds-label{font-size:11px;color:rgba(255,255,255,.5);margin-top:3px}
+
+    /* ── FOOTER ── */
+    footer{background:#060e1e;color:rgba(255,255,255,.7);padding:56px 24px 24px}
+    .footer-grid{max-width:1200px;margin:0 auto;
+      display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+    .footer-desc{font-size:13px;line-height:1.8;color:rgba(255,255,255,.5);margin-top:14px}
+    .socials{display:flex;gap:8px;margin-top:18px}
+    .soc{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.08);
+      display:flex;align-items:center;justify-content:center;font-size:15px;
+      text-decoration:none;transition:background .2s;cursor:pointer}
+    .soc:hover{background:rgba(201,168,76,.2)}
+    .fc h4{color:var(--white);font-size:14px;font-weight:700;margin-bottom:14px}
+    .fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .fc ul li a{color:rgba(255,255,255,.5);text-decoration:none;font-size:13px;transition:color .2s}
+    .fc ul li a:hover{color:var(--gold)}
+    .ci{display:flex;gap:8px;align-items:flex-start;margin-bottom:10px}
+    .ci-icon{font-size:14px;min-width:18px}
+    .ci-text{font-size:13px;color:rgba(255,255,255,.5);line-height:1.5}
+    .footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,.07);
+      padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .footer-bottom p{font-size:12px;color:rgba(255,255,255,.3)}
+
+    /* ── WA ── */
+    .wa{position:fixed;bottom:26px;left:26px;z-index:999;
+      width:56px;height:56px;border-radius:50%;background:#25D366;
+      display:flex;align-items:center;justify-content:center;font-size:26px;
+      box-shadow:0 6px 20px rgba(37,211,102,.4);text-decoration:none;
+      transition:transform .3s;animation:wab 3s ease infinite}
+    @keyframes wab{0%,80%,100%{transform:scale(1)}40%{transform:scale(1.1)}}
+    .wa:hover{transform:scale(1.12)}
+
+    /* ── MOBILE ── */
+    .mobile-menu{display:none;position:fixed;top:104px;inset-inline:0;z-index:999;
+      background:rgba(11,37,69,.98);backdrop-filter:blur(20px);
+      padding:20px;flex-direction:column;gap:6px}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:15px;
+      font-weight:500;padding:11px 14px;border-radius:10px;transition:background .2s}
+    .mobile-menu a:hover{background:rgba(255,255,255,.08);color:var(--gold)}
+
+    /* ── FADE ── */
+    .fi{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+    .fi.vis{opacity:1;transform:none}
+    .fi:nth-child(2){transition-delay:.1s}.fi:nth-child(3){transition-delay:.2s}
+    .fi:nth-child(4){transition-delay:.3s}.fi:nth-child(5){transition-delay:.4s}
+    .fi:nth-child(6){transition-delay:.5s}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .hero-inner,.booking-grid,.doctor-grid{grid-template-columns:1fr}
+      .hero-card{display:none}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:640px){
+      .nav-links,.nav-cta{display:none}
+      .hamburger{display:flex}
+      .form-row{grid-template-columns:1fr}
+      .time-grid{grid-template-columns:repeat(3,1fr)}
+      .footer-grid{grid-template-columns:1fr}
+      .doc-stats{grid-template-columns:1fr 1fr}
+      section{padding:56px 16px}
+      .hero{padding-top:104px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar" id="langBar">
+  <button class="lang-btn active" id="btnAr" onclick="setLang('ar')">العربية</button>
+  <span class="lang-sep">|</span>
+  <button class="lang-btn" id="btnFr" onclick="setLang('fr')">Français</button>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🦷</div>
+      <div class="logo-text">
+        <div class="logo-title" data-i18n="clinicName">عيادة الابتسامة الذهبية</div>
+        <div class="logo-sub">Dr. Amine Belkasem</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services" data-i18n="navServices">خدماتنا</a></li>
+      <li><a href="#booking" data-i18n="navBook">احجز موعد</a></li>
+      <li><a href="#doctor" data-i18n="navDoctor">الطبيب</a></li>
+      <li><a href="#testimonials" data-i18n="navReviews">آراء المرضى</a></li>
+      <li><a href="#contact" data-i18n="navContact">اتصل بنا</a></li>
+    </ul>
+    <a href="#booking" class="nav-cta" data-i18n="navCta">📅 احجز الآن</a>
+    <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()" data-i18n="navServices">🦷 خدماتنا</a>
+  <a href="#booking" onclick="toggleMenu()" data-i18n="navBook">📅 احجز موعد</a>
+  <a href="#doctor" onclick="toggleMenu()" data-i18n="navDoctor">👨‍⚕️ الطبيب</a>
+  <a href="#testimonials" onclick="toggleMenu()" data-i18n="navReviews">⭐ آراء المرضى</a>
+  <a href="#contact" onclick="toggleMenu()" data-i18n="navContact">📞 اتصل بنا</a>
+</div>
+
+<a href="https://wa.me/213XXXXXXXXX" class="wa" target="_blank">💬</a>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="glow glow1"></div><div class="glow glow2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="dot"></span><span data-i18n="heroBadge">✨ العيادة الأولى في المنطقة</span></div>
+      <h1 data-i18n="heroTitle">ابتسامة تتكلّم<br/><em>قبل أن تتكلّم</em> أنت</h1>
+      <p class="hero-desc" data-i18n="heroDesc">نقدّم لك رعاية أسنان بمستوى عالمي — من التبييض إلى الزراعة، مع أحدث التقنيات وفريق طبي ذو خبرة تتجاوز 15 عاماً.</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn-primary" data-i18n="heroCta1">📅 احجز موعدك مجاناً</a>
+        <a href="#services" class="btn-secondary" data-i18n="heroCta2">🦷 اكتشف خدماتنا</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">+3500</div><div class="stat-label" data-i18n="stat1">مريض سعيد</div></div>
+        <div class="stat"><div class="stat-num">15+</div><div class="stat-label" data-i18n="stat2">سنة خبرة</div></div>
+        <div class="stat"><div class="stat-num">98%</div><div class="stat-label" data-i18n="stat3">رضا المرضى</div></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="card-header">
+        <div class="card-avatar">👨‍⚕️</div>
+        <div>
+          <div class="card-name">Dr. Amine Belkasem</div>
+          <div class="card-sub" data-i18n="cardAvail">متاح اليوم — Disponible</div>
+        </div>
+      </div>
+      <div class="card-services">
+        <div class="cs"><span class="cs-icon">✨</span><span class="cs-name" data-i18n="svc1">تبييض الأسنان</span><span class="cs-badge" data-i18n="badgePopular">شائع</span></div>
+        <div class="cs"><span class="cs-icon">🔧</span><span class="cs-name" data-i18n="svc2">تقويم الأسنان</span><span class="cs-badge" data-i18n="badgeNew">جديد</span></div>
+        <div class="cs"><span class="cs-icon">🦷</span><span class="cs-name" data-i18n="svc3">زراعة الأسنان</span><span class="cs-badge" data-i18n="badgePremium">مميز</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-icon">🏆</span><span class="trust-text" data-i18n="trust1">معتمدون من وزارة الصحة</span></div>
+    <div class="trust-item"><span class="trust-icon">🔬</span><span class="trust-text" data-i18n="trust2">أحدث تقنيات طبية</span></div>
+    <div class="trust-item"><span class="trust-icon">💉</span><span class="trust-text" data-i18n="trust3">معايير تعقيم عالية</span></div>
+    <div class="trust-item"><span class="trust-icon">🕐</span><span class="trust-text" data-i18n="trust4">مواعيد بدون انتظار</span></div>
+    <div class="trust-item"><span class="trust-icon">💳</span><span class="trust-text" data-i18n="trust5">تسهيلات في الدفع</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="centered">
+      <div class="section-tag" data-i18n="svcTag">⚕️ خدماتنا الطبية</div>
+      <h2 class="section-title" data-i18n="svcTitle">كل ما تحتاجه لأسنان مثالية</h2>
+      <p class="section-sub" data-i18n="svcSub">نقدّم مجموعة شاملة من خدمات طب الأسنان التجميلي والعلاجي باستخدام أحدث التقنيات.</p>
+    </div>
+    <div class="services-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="booking-grid">
+    <div class="booking-info">
+      <div class="section-tag" data-i18n="bookTag">📅 احجز الآن</div>
+      <h2 class="section-title" data-i18n="bookTitle">موعدك بنقرة واحدة</h2>
+      <p class="section-sub" data-i18n="bookSub">احجز موعدك بسهولة وسرعة — سنتواصل معك لتأكيد الحجز خلال دقائق.</p>
+      <div class="bf-list">
+        <div class="bf"><div class="bf-icon">⚡</div><div><div class="bf-title" data-i18n="bf1t">تأكيد فوري</div><div class="bf-desc" data-i18n="bf1d">ستصلك رسالة تأكيد فور إرسال طلبك</div></div></div>
+        <div class="bf"><div class="bf-icon">🔄</div><div><div class="bf-title" data-i18n="bf2t">تعديل مجاني</div><div class="bf-desc" data-i18n="bf2d">يمكنك تغيير موعدك مجاناً قبل 24 ساعة</div></div></div>
+        <div class="bf"><div class="bf-icon">🎁</div><div><div class="bf-title" data-i18n="bf3t">كشف أوّل مجاني</div><div class="bf-desc" data-i18n="bf3d">أول زيارة تشمل فحصاً شاملاً مجاناً</div></div></div>
+      </div>
+    </div>
+    <div class="form-wrap">
+      <div id="formContent">
+        <div class="form-title" data-i18n="formTitle">🦷 احجز موعدك الآن</div>
+        <div class="form-sub" data-i18n="formSub">أكمل البيانات وسنتصل بك لتأكيد الحجز</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span class="req">*</span> <span data-i18n="lblName">الاسم الكامل</span></label>
+            <input type="text" id="fName" data-i18n-ph="phName"/>
+          </div>
+          <div class="form-group">
+            <label><span class="req">*</span> <span data-i18n="lblPhone">رقم الهاتف</span></label>
+            <input type="tel" id="fPhone" data-i18n-ph="phPhone"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label><span data-i18n="lblEmail">البريد الإلكتروني (اختياري)</span></label>
+          <input type="email" id="fEmail" placeholder="example@gmail.com"/>
+        </div>
+        <div class="form-group">
+          <label><span class="req">*</span> <span data-i18n="lblService">نوع الخدمة</span></label>
+          <select id="fService"><option value="" data-i18n="selDefault">— اختر الخدمة —</option></select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span class="req">*</span> <span data-i18n="lblDate">تاريخ الزيارة</span></label>
+            <input type="date" id="fDate"/>
+          </div>
+          <div class="form-group">
+            <label><span data-i18n="lblAge">العمر</span></label>
+            <input type="number" id="fAge" min="1" max="120" data-i18n-ph="phAge"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label><span class="req">*</span> <span data-i18n="lblTime">الوقت المفضّل</span></label>
+          <div class="time-grid" id="timeGrid"></div>
+        </div>
+        <div class="form-group">
+          <label><span data-i18n="lblNotes">ملاحظات</span></label>
+          <textarea id="fNotes" data-i18n-ph="phNotes"></textarea>
+        </div>
+        <button class="btn-book" onclick="submitBooking()" data-i18n="btnBook">📅 تأكيد الحجز</button>
+      </div>
+      <div class="success-box" id="successBox">
+        <div class="success-icon">🎉</div>
+        <h3 data-i18n="successTitle">تم حجز موعدك بنجاح!</h3>
+        <p data-i18n="successDesc">سنتواصل معك خلال دقائق لتأكيد الموعد.</p>
+        <div class="success-details" id="successDetails"></div>
+        <button class="btn-book" onclick="resetForm()" style="margin-top:16px" data-i18n="btnAnother">حجز موعد آخر</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-inner">
+    <div class="centered">
+      <div class="section-tag" data-i18n="revTag">⭐ آراء مرضانا</div>
+      <h2 class="section-title" data-i18n="revTitle">ماذا يقولون عنّا؟</h2>
+    </div>
+    <div class="reviews-grid" id="revGrid"></div>
+  </div>
+</section>
+
+<!-- DOCTOR -->
+<section class="doctor" id="doctor">
+  <div class="doctor-grid">
+    <div class="doc-card">
+      <div class="doc-av">👨‍⚕️</div>
+      <div class="doc-name">Dr. Amine Belkasem</div>
+      <div class="doc-spec" data-i18n="docSpec">طبيب أسنان تجميلي وزراعي متخصص</div>
+      <div class="doc-badges">
+        <span class="doc-badge" data-i18n="docB1">د. أسنان جزائر</span>
+        <span class="doc-badge" data-i18n="docB2">تدريب أوروبي</span>
+        <span class="doc-badge">AAID</span>
+        <span class="doc-badge" data-i18n="docB4">زراعة معتمد</span>
+      </div>
+    </div>
+    <div class="doc-info">
+      <div class="section-tag" data-i18n="docTag">👨‍⚕️ الطاقم الطبي</div>
+      <h2 class="section-title" data-i18n="docTitle">في أيدٍ أمينة ومتخصصة</h2>
+      <p class="section-sub" data-i18n="docDesc">Dr. Amine Belkasem حاصل على شهادة دكتوراه من جامعة وهران مع تخصص في طب الأسنان التجميلي من فرنسا. أكثر من 15 عاماً من الخبرة وآلاف الابتسامات الناجحة.</p>
+      <div class="doc-stats">
+        <div class="ds"><div class="ds-num">+3500</div><div class="ds-label" data-i18n="stat1">مريض سعيد</div></div>
+        <div class="ds"><div class="ds-num">15+</div><div class="ds-label" data-i18n="stat2">سنة خبرة</div></div>
+        <div class="ds"><div class="ds-num">+500</div><div class="ds-label" data-i18n="docStat3">زراعة ناجحة</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="fc">
+      <a href="#" class="logo" style="display:flex">
+        <div class="logo-icon">🦷</div>
+        <div class="logo-text">
+          <div class="logo-title" style="color:#fff" data-i18n="clinicName">عيادة الابتسامة الذهبية</div>
+          <div class="logo-sub">Dr. Amine Belkasem</div>
+        </div>
+      </a>
+      <p class="footer-desc" data-i18n="footerDesc">عيادة متخصصة في طب الأسنان التجميلي والعلاجي. ابتسامتك هي أولويتنا.</p>
+      <div class="socials">
+        <a class="soc" href="#">📘</a><a class="soc" href="#">📸</a>
+        <a class="soc" href="#">💬</a><a class="soc" href="#">▶️</a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4 data-i18n="footLinks">روابط سريعة</h4>
+      <ul>
+        <li><a href="#home" data-i18n="footHome">الرئيسية</a></li>
+        <li><a href="#services" data-i18n="navServices">خدماتنا</a></li>
+        <li><a href="#booking" data-i18n="navBook">احجز موعد</a></li>
+        <li><a href="#doctor" data-i18n="navDoctor">الطبيب</a></li>
+        <li><a href="admin.html" data-i18n="adminLink">لوحة الإدارة</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4 data-i18n="footServices">خدماتنا</h4>
+      <ul>
+        <li><a href="#booking" data-i18n="svc1">تبييض الأسنان</a></li>
+        <li><a href="#booking" data-i18n="svc2">تقويم الأسنان</a></li>
+        <li><a href="#booking" data-i18n="svc3">زراعة الأسنان</a></li>
+        <li><a href="#booking">Soins dentaires</a></li>
+        <li><a href="#booking">Prothèses dentaires</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4 data-i18n="footContact">معلومات التواصل</h4>
+      <div class="ci"><span class="ci-icon">📍</span><span class="ci-text" data-i18n="address">شارع الاستقلال، حي النصر<br/>مستغانم، الجزائر</span></div>
+      <div class="ci"><span class="ci-icon">📞</span><span class="ci-text">045 XX XX XX<br/>0555 XXX XXX</span></div>
+      <div class="ci"><span class="ci-icon">🕐</span><span class="ci-text" data-i18n="hours">السبت – الخميس: 08:00 – 18:00</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Cabinet El Ibtisamah — Tous droits réservés</p>
+    <p>Design <a href="https://snetprodz.com" style="color:var(--gold);text-decoration:none">SnetProDz</a></p>
+  </div>
+</footer>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"عيادة الابتسامة الذهبية","address":{"@type":"PostalAddress","addressLocality":"مستغانم","addressCountry":"DZ"},"telephone":"+213-555-XXX-XXX","openingHours":"Sa-Th 08:00-18:00"}</script>
+
+<script>
+// ── TRANSLATIONS ──────────────────────────────────────
+const T = {
+  ar: {
+    clinicName:'عيادة الابتسامة الذهبية',
+    navServices:'خدماتنا', navBook:'احجز موعد', navDoctor:'الطبيب',
+    navReviews:'آراء المرضى', navContact:'اتصل بنا', navCta:'📅 احجز الآن',
+    heroBadge:'✨ العيادة الأولى في المنطقة',
+    heroTitle:'ابتسامة تتكلّم<br/><em>قبل أن تتكلّم</em> أنت',
+    heroDesc:'نقدّم لك رعاية أسنان بمستوى عالمي — من التبييض إلى الزراعة، مع أحدث التقنيات وفريق طبي ذو خبرة تتجاوز 15 عاماً.',
+    heroCta1:'📅 احجز موعدك مجاناً', heroCta2:'🦷 اكتشف خدماتنا',
+    stat1:'مريض سعيد', stat2:'سنة خبرة', stat3:'رضا المرضى',
+    cardAvail:'متاح اليوم — Disponible',
+    svc1:'تبييض الأسنان', svc2:'تقويم الأسنان', svc3:'زراعة الأسنان',
+    badgePopular:'شائع', badgeNew:'جديد', badgePremium:'مميز',
+    trust1:'معتمدون من وزارة الصحة', trust2:'أحدث تقنيات طبية',
+    trust3:'معايير تعقيم عالية', trust4:'مواعيد بدون انتظار', trust5:'تسهيلات في الدفع',
+    svcTag:'⚕️ خدماتنا الطبية', svcTitle:'كل ما تحتاجه لأسنان مثالية',
+    svcSub:'نقدّم مجموعة شاملة من خدمات طب الأسنان التجميلي والعلاجي.',
+    bookTag:'📅 احجز الآن', bookTitle:'موعدك بنقرة واحدة',
+    bookSub:'احجز بسهولة — سنتواصل معك لتأكيد الحجز خلال دقائق.',
+    bf1t:'تأكيد فوري', bf1d:'ستصلك رسالة تأكيد فور إرسال طلبك',
+    bf2t:'تعديل مجاني', bf2d:'يمكنك تغيير موعدك مجاناً قبل 24 ساعة',
+    bf3t:'كشف أوّل مجاني', bf3d:'أول زيارة تشمل فحصاً شاملاً مجاناً',
+    formTitle:'🦷 احجز موعدك الآن', formSub:'أكمل البيانات وسنتصل بك',
+    lblName:'الاسم الكامل', phName:'محمد أحمد',
+    lblPhone:'رقم الهاتف', phPhone:'0555 000 000',
+    lblEmail:'البريد الإلكتروني (اختياري)',
+    lblService:'نوع الخدمة', selDefault:'— اختر الخدمة —',
+    lblDate:'تاريخ الزيارة', lblAge:'العمر', phAge:'العمر',
+    lblTime:'الوقت المفضّل', lblNotes:'ملاحظات', phNotes:'أي ملاحظات إضافية...',
+    btnBook:'📅 تأكيد الحجز',
+    successTitle:'تم حجز موعدك بنجاح! 🎉',
+    successDesc:'سنتواصل معك خلال دقائق لتأكيد الموعد.',
+    btnAnother:'حجز موعد آخر',
+    pauseLabel:'— استراحة الغداء —',
+    revTag:'⭐ آراء مرضانا', revTitle:'ماذا يقولون عنّا؟',
+    docSpec:'طبيب أسنان تجميلي وزراعي متخصص',
+    docB1:'د. أسنان جزائر', docB2:'تدريب أوروبي', docB4:'زراعة معتمد',
+    docTag:'👨‍⚕️ الطاقم الطبي', docTitle:'في أيدٍ أمينة ومتخصصة',
+    docDesc:'Dr. Amine حاصل على شهادة دكتوراه من جامعة وهران مع تخصص في طب الأسنان التجميلي من فرنسا. أكثر من 15 عاماً من الخبرة.',
+    docStat3:'زراعة ناجحة',
+    footLinks:'روابط سريعة', footHome:'الرئيسية',
+    footServices:'خدماتنا', footContact:'معلومات التواصل',
+    address:'شارع الاستقلال، حي النصر<br/>مستغانم، الجزائر',
+    hours:'السبت – الخميس: 08:00 – 18:00',
+    footerDesc:'عيادة متخصصة في طب الأسنان التجميلي والعلاجي. ابتسامتك هي أولويتنا.',
+    adminLink:'لوحة الإدارة',
+    dRowName:'المريض', dRowService:'الخدمة', dRowDate:'التاريخ',
+    dRowTime:'الوقت', dRowPhone:'الهاتف',
+  },
+  fr: {
+    clinicName:'Cabinet El Ibtisamah',
+    navServices:'Nos Services', navBook:'Rendez-vous', navDoctor:'Le Médecin',
+    navReviews:'Avis Patients', navContact:'Contact', navCta:'📅 Réserver',
+    heroBadge:'✨ Le cabinet N°1 de la région',
+    heroTitle:'Un sourire qui parle<br/><em>avant même</em> que vous parliez',
+    heroDesc:'Des soins dentaires de niveau international — du blanchiment à l\'implant, avec les dernières technologies et une équipe avec plus de 15 ans d\'expérience.',
+    heroCta1:'📅 Prendre rendez-vous', heroCta2:'🦷 Nos services',
+    stat1:'patients satisfaits', stat2:'ans d\'expérience', stat3:'satisfaction',
+    cardAvail:'Disponible aujourd\'hui',
+    svc1:'Blanchiment dentaire', svc2:'Orthodontie', svc3:'Implants dentaires',
+    badgePopular:'Populaire', badgeNew:'Nouveau', badgePremium:'Premium',
+    trust1:'Agréé par le Ministère de la Santé', trust2:'Dernières technologies médicales',
+    trust3:'Normes de stérilisation élevées', trust4:'Rendez-vous sans attente', trust5:'Facilités de paiement',
+    svcTag:'⚕️ NOS SOINS', svcTitle:'Tout ce qu\'il faut pour un sourire parfait',
+    svcSub:'Une gamme complète de soins dentaires esthétiques et thérapeutiques avec les dernières technologies.',
+    bookTag:'📅 RÉSERVATION', bookTitle:'Votre rendez-vous en un clic',
+    bookSub:'Réservez facilement — nous vous contacterons pour confirmer en quelques minutes.',
+    bf1t:'Confirmation immédiate', bf1d:'Un message de confirmation vous sera envoyé dès votre demande',
+    bf2t:'Modification gratuite', bf2d:'Modifiez votre rendez-vous gratuitement jusqu\'à 24h avant',
+    bf3t:'Première consultation gratuite', bf3d:'Votre première visite inclut un bilan complet gratuit',
+    formTitle:'🦷 Prendre rendez-vous', formSub:'Remplissez le formulaire, nous vous rappelons rapidement',
+    lblName:'Nom complet', phName:'Mohammed Ahmed',
+    lblPhone:'Numéro de téléphone', phPhone:'0555 000 000',
+    lblEmail:'Email (optionnel)',
+    lblService:'Type de soin', selDefault:'— Choisissez un soin —',
+    lblDate:'Date de visite', lblAge:'Âge', phAge:'Votre âge',
+    lblTime:'Heure préférée', lblNotes:'Notes', phNotes:'Informations complémentaires...',
+    btnBook:'📅 Confirmer le rendez-vous',
+    successTitle:'Rendez-vous enregistré ! 🎉',
+    successDesc:'Nous vous contacterons dans quelques minutes pour confirmer.',
+    btnAnother:'Prendre un autre rendez-vous',
+    pauseLabel:'— Pause déjeuner —',
+    revTag:'⭐ AVIS PATIENTS', revTitle:'Ce que nos patients disent',
+    docSpec:'Chirurgien-dentiste spécialisé en esthétique et implantologie',
+    docB1:'Chirurgien-dentiste Algérie', docB2:'Formation européenne', docB4:'Implantologue certifié',
+    docTag:'👨‍⚕️ NOTRE ÉQUIPE', docTitle:'Entre des mains expertes et bienveillantes',
+    docDesc:'Dr. Amine est titulaire d\'un doctorat en chirurgie dentaire de l\'Université d\'Oran, avec une spécialisation en esthétique dentaire en France. Plus de 15 ans d\'expérience.',
+    docStat3:'implants réussis',
+    footLinks:'Liens rapides', footHome:'Accueil',
+    footServices:'Nos soins', footContact:'Coordonnées',
+    address:'Rue de l\'Indépendance, Cité Nasr<br/>Mostaganem, Algérie',
+    hours:'Sam – Jeu : 08h00 – 18h00',
+    footerDesc:'Cabinet spécialisé en dentisterie esthétique et thérapeutique. Votre sourire est notre priorité.',
+    adminLink:'Panneau Admin',
+    dRowName:'Patient', dRowService:'Soin', dRowDate:'Date',
+    dRowTime:'Heure', dRowPhone:'Téléphone',
+  }
+};
+
+const SERVICES = {
+  ar:[
+    {e:'🔍',t:'فحص شامل مجاني',d:'فحص شامل للأسنان واللثة مع خطة علاج مجانية للمرضى الجدد.',p:'مجاناً'},
+    {e:'✨',t:'تبييض الأسنان',d:'نتائج مذهلة في جلسة واحدة بتقنية الليزر.',p:'ابدأ من 5,000 دج',ps:' / جلسة'},
+    {e:'🔧',t:'تقويم الأسنان',d:'تقويم فعّال للأطفال والبالغين بتقنيات شفافة وتقليدية.',p:'ابدأ من 35,000 دج',ps:' / علاج'},
+    {e:'🦷',t:'زراعة الأسنان',d:'أسنان دائمة بمظهر طبيعي — ضمان 10 سنوات.',p:'ابدأ من 65,000 دج',ps:' / سن'},
+    {e:'💎',t:'تجميل الأسنان',d:'قشور خزفية وحشوات تجميلية لإطار ابتسامة مثالي.',p:'ابدأ من 8,000 دج',ps:' / سن'},
+    {e:'🛡️',t:'علاج جذور الأسنان',d:'حفظ سنّك الطبيعي دون ألم بتقنيات حديثة.',p:'ابدأ من 4,500 دج',ps:' / سن'},
+  ],
+  fr:[
+    {e:'🔍',t:'Bilan dentaire gratuit',d:'Examen complet des dents et des gencives avec plan de traitement offert.',p:'Gratuit'},
+    {e:'✨',t:'Blanchiment dentaire',d:'Résultats remarquables en une séance grâce à la technologie laser.',p:'Dès 5 000 DA',ps:' / séance'},
+    {e:'🔧',t:'Orthodontie',d:'Traitement efficace pour enfants et adultes, bagues transparentes ou traditionnelles.',p:'Dès 35 000 DA',ps:' / traitement'},
+    {e:'🦷',t:'Implants dentaires',d:'Dents permanentes d\'aspect naturel — garantie 10 ans.',p:'Dès 65 000 DA',ps:' / dent'},
+    {e:'💎',t:'Esthétique dentaire',d:'Facettes en céramique et composites pour un sourire parfait.',p:'Dès 8 000 DA',ps:' / dent'},
+    {e:'🛡️',t:'Traitement endodontique',d:'Conservation de votre dent naturelle sans douleur grâce aux techniques modernes.',p:'Dès 4 500 DA',ps:' / dent'},
+  ]
+};
+
+const REVIEWS = {
+  ar:[
+    {s:'★★★★★',t:'"عيادة رائعة والدكتور محترف جداً. بيّضت أسناني والنتيجة مذهلة في جلسة واحدة!"',n:'فاطمة بن عمر',a:'ف',d:'تبييض — مارس 2025'},
+    {s:'★★★★★',t:'"كنت خايف من الزراعة بس الدكتور طمّنني وشرح كل شيء. العملية بدون ألم والنتيجة ما شاء الله."',n:'يوسف قادري',a:'ي',d:'زراعة — فبراير 2025'},
+    {s:'★★★★★',t:'"ابنتي عملت تقويم والدكتور صبور ومحترم. النتائج ممتازة والثمن معقول."',n:'نور الدين حمزة',a:'ن',d:'تقويم — يناير 2025'},
+  ],
+  fr:[
+    {s:'★★★★★',t:'"Cabinet exceptionnel, le Dr. Amine est très professionnel. Blanchiment impeccable en une seule séance !"',n:'Fatima B.',a:'F',d:'Blanchiment — Mars 2025'},
+    {s:'★★★★★',t:'"J\'avais peur des implants mais le docteur m\'a tout expliqué. L\'opération s\'est très bien passée, sans douleur."',n:'Youcef K.',a:'Y',d:'Implant — Février 2025'},
+    {s:'★★★★★',t:'"Ma fille a fait son orthodontie ici. Le médecin est patient et sérieux. Excellents résultats, prix raisonnable."',n:'Noureddine H.',a:'N',d:'Orthodontie — Janvier 2025'},
+  ]
+};
+
+const SELECT_OPTIONS = {
+  ar:['فحص شامل مجاني','تبييض الأسنان','تقويم الأسنان','زراعة الأسنان','تجميل الأسنان (قشور)','علاج جذور الأسنان','تنظيف وإزالة جير','حشو الأسنان','خلع الأسنان','أطقم وتركيبات ثابتة'],
+  fr:['Bilan dentaire gratuit','Blanchiment dentaire','Orthodontie','Implants dentaires','Esthétique dentaire (facettes)','Traitement endodontique','Détartrage','Soins conservateurs','Extraction dentaire','Prothèses fixes'],
+};
+
+// ── TIME SLOTS ────────────────────────────────────────
+const UNAVAIL = JSON.parse(localStorage.getItem('unavailableSlots') || '["12:00","12:30"]');
+function genSlots() {
+  const grid = document.getElementById('timeGrid');
+  grid.innerHTML = '';
+  let t = 8*60;
+  while(t < 18*60) {
+    const hh = String(Math.floor(t/60)).padStart(2,'0');
+    const mm = String(t%60).padStart(2,'0');
+    const label = `${hh}:${mm}`;
+    if(label === '12:00') {
+      const p = document.createElement('div');
+      p.className = 'pause-label';
+      p.setAttribute('data-i18n','pauseLabel');
+      p.textContent = lang === 'ar' ? '— استراحة الغداء —' : '— Pause déjeuner —';
+      grid.appendChild(p);
+    }
+    const d = document.createElement('div');
+    d.className = 'tslot' + (UNAVAIL.includes(label) ? ' unavail' : '');
+    d.textContent = label;
+    if(!UNAVAIL.includes(label)) d.onclick = function(){ selectTime(this, label); };
+    grid.appendChild(d);
+    t += 30;
+  }
+}
+
+let selectedTime = '';
+function selectTime(el, t) {
+  document.querySelectorAll('.tslot').forEach(s => s.classList.remove('sel'));
+  el.classList.add('sel'); selectedTime = t;
+}
+
+// ── LANG ─────────────────────────────────────────────
+let lang = localStorage.getItem('lang') || 'ar';
+function setLang(l) {
+  lang = l;
+  localStorage.setItem('lang', l);
+  const html = document.getElementById('htmlRoot');
+  html.setAttribute('lang', l);
+  html.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+  document.body.classList.toggle('fr', l === 'fr');
+  document.getElementById('btnAr').classList.toggle('active', l === 'ar');
+  document.getElementById('btnFr').classList.toggle('active', l === 'fr');
+  // Apply translations
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if(T[l][k] !== undefined) el.innerHTML = T[l][k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const k = el.getAttribute('data-i18n-ph');
+    if(T[l][k] !== undefined) el.placeholder = T[l][k];
+  });
+  buildServices(); buildReviews(); buildSelect(); genSlots();
+}
+
+function buildServices() {
+  const g = document.getElementById('svcGrid');
+  g.innerHTML = SERVICES[lang].map(s => `
+    <div class="svc-card fi">
+      <span class="svc-emoji">${s.e}</span>
+      <div class="svc-title">${s.t}</div>
+      <div class="svc-desc">${s.d}</div>
+      <div class="svc-price">${s.p}<span>${s.ps||''}</span></div>
+    </div>`).join('');
+  observeFade();
+}
+function buildReviews() {
+  const g = document.getElementById('revGrid');
+  g.innerHTML = REVIEWS[lang].map(r => `
+    <div class="rev-card fi">
+      <div class="stars">${r.s}</div>
+      <div class="rev-text">${r.t}</div>
+      <div class="reviewer">
+        <div class="rev-avatar">${r.a}</div>
+        <div><div class="rev-name">${r.n}</div><div class="rev-date">${r.d}</div></div>
+      </div>
+    </div>`).join('');
+  observeFade();
+}
+function buildSelect() {
+  const sel = document.getElementById('fService');
+  sel.innerHTML = `<option value="">${T[lang].selDefault}</option>` +
+    SELECT_OPTIONS[lang].map(o => `<option value="${o}">${o}</option>`).join('');
+}
+
+// ── BOOKING ──────────────────────────────────────────
+let appointments = JSON.parse(localStorage.getItem('dentalAppointments') || '[]');
+function submitBooking() {
+  const name    = document.getElementById('fName').value.trim();
+  const phone   = document.getElementById('fPhone').value.trim();
+  const email   = document.getElementById('fEmail').value.trim();
+  const service = document.getElementById('fService').value;
+  const date    = document.getElementById('fDate').value;
+  const age     = document.getElementById('fAge').value;
+  const notes   = document.getElementById('fNotes').value.trim();
+  if(!name||!phone||!service||!date||!selectedTime){
+    alert(lang==='ar'?'⚠️ يرجى تعبئة جميع الحقول المطلوبة واختيار وقت':'⚠️ Veuillez remplir tous les champs requis et choisir une heure');
+    return;
+  }
+  const appt = { id:Date.now(), name, phone, email, service, date, time:selectedTime, age, notes,
+    status:'pending', lang, createdAt:new Date().toISOString() };
+  appointments.unshift(appt);
+  localStorage.setItem('dentalAppointments', JSON.stringify(appointments));
+  const dateF = new Date(date+'T00:00').toLocaleDateString(lang==='ar'?'ar-DZ':'fr-FR',
+    {weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  document.getElementById('successDetails').innerHTML = `
+    <div class="drow"><span class="dlabel">${T[lang].dRowName}</span><span class="dval">${name}</span></div>
+    <div class="drow"><span class="dlabel">${T[lang].dRowService}</span><span class="dval">${service}</span></div>
+    <div class="drow"><span class="dlabel">${T[lang].dRowDate}</span><span class="dval">${dateF}</span></div>
+    <div class="drow"><span class="dlabel">${T[lang].dRowTime}</span><span class="dval">${selectedTime}</span></div>
+    <div class="drow"><span class="dlabel">${T[lang].dRowPhone}</span><span class="dval">${phone}</span></div>`;
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('successBox').style.display = 'block';
+}
+function resetForm() {
+  ['fName','fPhone','fEmail','fAge','fNotes'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('fService').value='';
+  document.querySelectorAll('.tslot').forEach(s=>s.classList.remove('sel'));
+  selectedTime='';
+  const t=new Date(); t.setDate(t.getDate()+1);
+  document.getElementById('fDate').value=t.toISOString().split('T')[0];
+  document.getElementById('formContent').style.display='block';
+  document.getElementById('successBox').style.display='none';
+}
+
+// ── UTILS ────────────────────────────────────────────
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+document.addEventListener('click', e => {
+  const m = document.getElementById('mobileMenu');
+  if(!m.contains(e.target) && !document.getElementById('hamburger').contains(e.target)) m.classList.remove('open');
+});
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').style.boxShadow = scrollY>50 ? '0 4px 30px rgba(0,0,0,.3)' : 'none';
+});
+function observeFade() {
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); }), {threshold:.08});
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+}
+
+// ── INIT ─────────────────────────────────────────────
+window.addEventListener('load', () => {
+  const t=new Date(); t.setDate(t.getDate()+1);
+  document.getElementById('fDate').value = t.toISOString().split('T')[0];
+  document.getElementById('fDate').min = t.toISOString().split('T')[0];
+  setLang(lang);
+  observeFade();
+});
+</script>
+</body>
+</html>
