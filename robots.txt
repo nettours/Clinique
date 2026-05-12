@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+# Sitemap
+Sitemap: https://votre-domaine.dz/sitemap.xml
